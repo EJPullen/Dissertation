@@ -31,3 +31,14 @@ library(raster)
  
  Step 3: Clip the DTM to the original model's boundaries.
  This was accomplished on QGIS, an open-source geographic information systems application. 
+
+Firstly, load in your original model DTM and your merged-DTM from step 2.
+Secondly, via. the 'Raster' tab at the top of the page, navigate to the 'extension' subset and click 'clip raster by extexnt'
+Lastly, load in the merged-DTM as your input layer, and clip its extent according to that of the original model DTM. 
+
+ Step 4: Resample the DTM into a coarser resolution.
+ This is accomplished using the LFPtools package (https://github.com/jsosa/LFPtools) on Python 
+ 
+ 
+ 
+
