@@ -1,5 +1,5 @@
-### Dissertation
-# special thanks to both Paul Bates and Jeison Sosa for their help on this project so far:
+# Dissertation
+##### special thanks to both Paul Bates and Jeison Sosa for their help on this project so far:
 
 Investigating the impact of resolution, particularly at building-resolving levels, on modelled inundation levels in the urban area of Carlisle, UK.  
 
