@@ -5,11 +5,13 @@ Investigating the impact of resolution, particularly at building-resolving level
 
 
 
-Step 1: Find the terrain files for the area of choice: Carlisle.
+### Step 1: 
+Find the terrain files for the area of choice: Carlisle.
 This was accomplished by gaining access to digimap's 1m lidar composite Digital Terrain Model grid.
 This provides 1x1km (1000x1000 cells) grids of Carlisle.
 
-Step 2: Merge the files together to create one DTM.
+### Step 2:
+Merge the files together to create one DTM.
 This was accomplished by using the raster and rgdal libraries on Rstudio, an open-source coding language.
 The code is as follows:
 
@@ -31,7 +33,8 @@ library(raster)
  writeRaster(x,"<output_file_name>.asc")
  ```
  
- Step 3: Clip the DTM to the original model's boundaries.
+ ### Step 3:
+ Clip the DTM to the original model's boundaries.
  This was accomplished on QGIS, an open-source geographic information systems application. 
 
 Firstly, load in your original model DTM and your merged-DTM from step 2.
@@ -39,7 +42,8 @@ Secondly, via. the 'Raster' tab at the top of the page, navigate to the 'extensi
 Lastly, load in the merged-DTM as your input layer, and clip its extent according to that of the original model DTM. 
 Save your DTM as a GeoTIFF (.tif) file, this is important for the next step!
 
- Step 4: Resample the DTM into a coarser resolution.
+ ### Step 4:
+ Resample the DTM into a coarser resolution.
  This is accomplished using the LFPtools package (https://github.com/jsosa/LFPtools) on Python 
  
  An example piece of code for a resampling method is as such:
