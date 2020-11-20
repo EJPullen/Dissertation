@@ -43,7 +43,7 @@ Save your DTM as a GeoTIFF (.tif) file, this is important for the next step!
  This is accomplished using the LFPtools package (https://github.com/jsosa/LFPtools) on Python 
  
  An example piece of code for a resampling method is as such:
- --------------------
+```{r}
  #!/usr/bin/env python
 
 from subprocess import call
@@ -59,7 +59,7 @@ lfp.rasterresample(nproc=4,
                    netf='two_m_clipped_tmp.tif',
                    output='two_m_clipped.tif')
 
- ---------------------------
+ ```
  where;
   nproc = # of computer cores to use
   outlier = do you want to detect outliers in the model? 
