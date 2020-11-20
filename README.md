@@ -61,13 +61,21 @@ lfp.rasterresample(nproc=4,
 
  ```
  where;
+ 
   nproc = # of computer cores to use
+ 
   outlier = do you want to detect outliers in the model? 
+ 
   method = which reduction method do you want to use? mean, min, meanmin?
+ 
   hrnodata = the highresolution NODATA value- if you're unsure as to what this is then you can open your DTM file in a text reader, and it will show you.
+ 
   thresh = the searching windows threshold
+ 
   demf = the file name of your high resolution DTM
+ 
   netf = the target mask file path
+ 
   output = the output file name
  
  ------------------------------
