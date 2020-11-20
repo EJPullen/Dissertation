@@ -35,10 +35,38 @@ library(raster)
 Firstly, load in your original model DTM and your merged-DTM from step 2.
 Secondly, via. the 'Raster' tab at the top of the page, navigate to the 'extension' subset and click 'clip raster by extexnt'
 Lastly, load in the merged-DTM as your input layer, and clip its extent according to that of the original model DTM. 
+Save your DTM as a GeoTIFF (.tif) file, this is important for the next step!
 
  Step 4: Resample the DTM into a coarser resolution.
  This is accomplished using the LFPtools package (https://github.com/jsosa/LFPtools) on Python 
  
+ An example piece of code for a resampling method is as such:
+ --------------------
+ #!/usr/bin/env python
+
+from subprocess import call
+import lfptools as lfp
+
+# Resampling using LFPtools (allows removing outliers)
+lfp.rasterresample(nproc=4,
+                   outlier='yes',
+                   method='mean',
+                   hrnodata=-9999,
+                   thresh=0.00416,
+                   demf='one_m_clipped.tif',
+                   netf='two_m_clipped_tmp.tif',
+                   output='two_m_clipped.tif')
+
+ ---------------------------
+ where;
+  nproc = # of computer cores to use
+  outlier = do you want to detect outliers in the model? 
+  method = which reduction method do you want to use? mean, min, meanmin?
+  hrnodata = the highresolution NODATA value- if you're unsure as to what this is then you can open your DTM file in a text reader, and it will show you.
+  thresh = the searching windows threshold
+  demf = the file name of your high resolution DTM
+  netf = the target mask file path
+  output = the output file name
  
- 
+ ------------------------------
 
